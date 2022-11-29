@@ -1,34 +1,20 @@
-## Usage
+# Solid DigitZ Firmware
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## Run dev locally
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
-
-```bash
-$ npm install # or pnpm install or yarn install
+```shell
+cd ./solid-digitz/
+yarn # installs all dependencies
+# wait for installation to be fininished
+yarn dev # starts dev server on http://localhost:3000/
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## Build project
 
-## Available Scripts
+```shell
+yarn build
+```
 
-In the project directory, you can run:
+## About SolidJS
 
-### `npm dev` or `npm start`
-
-Runs the app in the development mode.<br/>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br/>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br/>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br/>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+Solid is kind of like React, but it has its quirks when introducing reactive state & signals. Be sure to read about the difference of `useState()` in React and `createSignal()` in Solid. Same goes for all other hooks.
