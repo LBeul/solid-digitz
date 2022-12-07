@@ -7,7 +7,7 @@ const SenseIDTab = () => {
         <table>
           <tbody>
             <tr>
-              <td className='tar'> Access Token:</td>
+              <td> Access Token:</td>
               <td>
                 <input
                   style={{ width: '500px' }}
@@ -19,7 +19,7 @@ const SenseIDTab = () => {
               </td>
             </tr>
             <tr>
-              <td className='tar'> SenseBox ID:</td>
+              <td> SenseBox ID:</td>
               <td>
                 <input
                   style={{ width: '220px' }}
@@ -31,7 +31,7 @@ const SenseIDTab = () => {
               </td>
             </tr>
             <tr>
-              <td className='tar'> Temperatursensor ID:</td>
+              <td> Temperatursensor ID:</td>
               <td>
                 <input
                   style={{ width: '220px' }}
@@ -50,7 +50,7 @@ const SenseIDTab = () => {
               </td>
             </tr>
             <tr>
-              <td className='tar'> Luftdrucksensor ID:</td>
+              <td> Luftdrucksensor ID:</td>
               <td>
                 <input
                   style={{ width: '220px' }}
@@ -69,7 +69,7 @@ const SenseIDTab = () => {
               </td>
             </tr>
             <tr>
-              <td className='tar'> Luftfeuchtigkeitssensor ID:</td>
+              <td> Luftfeuchtigkeitssensor ID:</td>
               <td>
                 <input
                   style={{ width: '220px' }}
@@ -88,7 +88,7 @@ const SenseIDTab = () => {
               </td>
             </tr>
             <tr>
-              <td className='tar'> Helligkeitssensor ID:</td>
+              <td> Helligkeitssensor ID:</td>
               <td>
                 <input
                   style={{ width: '220px' }}
@@ -107,7 +107,7 @@ const SenseIDTab = () => {
               </td>
             </tr>
             <tr>
-              <td className='tar'> Bodenfeuchtesensor ID:</td>
+              <td> Bodenfeuchtesensor ID:</td>
               <td>
                 <input
                   style={{ width: '220px' }}
@@ -126,7 +126,7 @@ const SenseIDTab = () => {
               </td>
             </tr>
             <tr>
-              <td className='tar'> DigitZ-WLAN ID:</td>
+              <td> DigitZ-WLAN ID:</td>
               <td>
                 <input
                   style={{ width: '220px' }}
@@ -144,7 +144,7 @@ const SenseIDTab = () => {
                 />
               </td>
             </tr>
-            {/* <tr> <td className="tar"> UV-Sensor ID:</td><td><input style={{ width:'220px' }} name="uvsense" length={80} type="text" defaultValue="%UVSenseID%"/>Aktiv:<input name="boolUV" type="checkbox"  checked="true" disabled="true"/></td></tr> */}
+            {/* <tr> <td> UV-Sensor ID:</td><td><input style={{ width:'220px' }} name="uvsense" length={80} type="text" defaultValue="%UVSenseID%"/>Aktiv:<input name="boolUV" type="checkbox"  checked="true" disabled="true"/></td></tr> */}
           </tbody>
         </table>
         <br />
