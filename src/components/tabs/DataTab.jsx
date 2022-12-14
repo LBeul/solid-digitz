@@ -10,7 +10,7 @@ const DataTab = () => {
       <p>WiFi Qualität %RssiValue% %</p>
       {/* <p>Anzahl der Systemstarts %BOOTNUMBER% </p> */}
       <p>
-        <a href='/?ReiterName=Daten'>Anzeige aktualisieren</a>
+        <a href='/'>Anzeige aktualisieren</a>
       </p>
     </div>
   );
