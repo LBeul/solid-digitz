@@ -2,11 +2,12 @@ import TabContainer from './components/TabContainer';
 
 function App() {
   return (
-    <>
-      <h2>Einstellungen für Gerät: %NetworkName%</h2>
-      <p>Klicken Sie auf die Tabs zur Kategorienauswahl:</p>
+    <div class='container mx-auto py-5'>
+      <h2 class='text-center text-xl font-bold mb-5'>
+        Einstellungen für DigitZ %NetworkName%
+      </h2>
       <TabContainer />
-    </>
+    </div>
   );
 }
 

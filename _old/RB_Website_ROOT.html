@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+table, th, td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+.tar{
+  text-align:right;
+  text-weight:bold;
+  }
+
+</style>
+</head>
+<body>
+<input type="hidden" id="reiter" value=%ReiterName%> 
+<h2>Einstellungen für Gerät: %NetworkName%</h2>
+<p>Klicken Sie auf die Tabs zur Kategorienauswahl:</p>
+<div class="tab">
+  <button class="tablinks" onclick="Reiter(event, 'Daten')">Sensordaten</button>
+  <button class="tablinks" onclick="Reiter(event, 'WiFi')">WiFi</button>
+  <button class="tablinks" onclick="Reiter(event, 'SenseID')">openSensemap-IDs</button>
+  <button class="tablinks" onclick="Reiter(event, 'Calibration')">Sensorkalibrierung</button>
+</div>
+
+<div id="Daten" class="tabcontent">
+  <h1>Aktuelle Sensordaten</h1>
+  <p>Temperatur %TempValue% C</p>
+  <p>Luftdruck %PressureValue% hPa</p>
+  <p>Luftfeuchtigkeit %HumidityValue% %rel</p>
+  <p>Lichtintensität %LuxValue% Lux</p>
+  <p>Bodenfeuchte %MoistureValue% %rel</p>
+  <p>WiFi Qualität %RssiValue% %</p>
+ <!-- <p>Anzahl der Systemstarts %BOOTNUMBER% </p> -->
+  <p><a href="/?ReiterName=Daten">Anzeige aktualisieren</a></p>
+</div>
+
+<div id="WiFi" class="tabcontent">
+  <h1>Wi-Fi Settings</h1>
+  <p>Bitte wählen Sie ein Wlan-Netzwerk und geben Sie das Passwort ein:.</p>
+  <p>%FIRMWARE%</p>
+  <form method="get" action="setwifi">
+  <label>SSID: </label><select name="ssid">
+  %ssidList%
+  </select><br>Password: <input name="pass" length=64 type="password">
+  <br><br>
+  Geben Sie einen Netzwerknamen für die Box ein:<br>
+  </select>Netzwerkname:<input name="networkname" length=180 type="text" value =%NetworkName%>
+  <br><input type="submit"></form>
+</div>
+
+<div id="SenseID" class="tabcontent">
+  <h1>SensorIDs der openSenseMap</h1><p>Geben Sie hier die SensorIDs ein</p>
+ <form method="get" action="setsensor">
+ <table>
+ <tr> <td class="tar"> Access Token:</td><td><input style="width:500px;" name="authcode" length=180 type="text" value =%AuthCodeID%></td></tr>
+ <tr> <td class="tar"> SenseBox ID:</td><td><input style="width:220px;" name="gbid" length=80 type="text" value =%GnomeBoxID%></td></tr>
+ <tr> <td class="tar"> Temperatursensor ID:</td><td><input style="width:220px;" name="tempsense" length=80 type="text" value =%TempSenseID%>Aktiv:<input name="boolTemp" type="checkbox"  checked="true" disabled="true"></td></tr>
+ <tr> <td class="tar"> Luftdrucksensor ID:</td><td><input style="width:220px;" name="pressuresense" length=80 type="text" value =%PressureSenseID%>Aktiv:<input name="boolPressure" type="checkbox"  checked="true" disabled="true"></td></tr>
+ <tr> <td class="tar"> Luftfeuchtigkeitssensor ID:</td><td><input style="width:220px;" name="humidsense" length=80 type="text" value =%HumidSenseID%>Aktiv:<input name="boolHumid" type="checkbox"  checked="true" disabled="true"></td></tr>
+ <tr> <td class="tar"> Helligkeitssensor ID:</td><td><input style="width:220px;" name="luxsense" length=80 type="text" value =%LuxSenseID%>Aktiv:<input name="boolLux" type="checkbox"  checked="true" disabled="true"></td></tr>
+ <tr> <td class="tar"> Bodenfeuchtesensor ID:</td><td><input style="width:220px;" name="soilsense" length=80 type="text" value =%SoilSenseID%>Aktiv:<input name="boolSoil" type="checkbox"  checked="true" disabled="true"></td></tr>
+ <tr> <td class="tar"> DigitZ-WLAN ID:</td><td><input style="width:220px;" name="rssi" length=80 type="text" value =%RssiID%>Aktiv:<input name="boolRssi" type="checkbox" checked="true" disabled="true"></td></tr>
+<!-- <tr> <td class="tar"> UV-Sensor ID:</td><td><input style="width:220px;" name="uvsense" length=80 type="text" value =%UVSenseID%>Aktiv:<input name="boolUV" type="checkbox"  checked="true" disabled="true"></td></tr> -->
+ </table>
+ <br><input type="submit"></form>
+ <p><a href="/gotoOSM">Daten auf openSenseMap anzeigen</a></p>
+</div>
+
+<div id="Calibration" class="tabcontent">
+  <h1>Kalibrierwerte für die Bodenfeuchtesensoren</h1><p>Geben Sie hier die Kalibrierwerte ein</p>
+ <form method="get" action="setADCcal">
+ <table>
+ <tr> 
+  <th rowspan="2">Anschluss AN1: </th>
+  <td>Kleinster Wert<input style="width:50px;" name="LoValue1" length=20 type="number" value =%LoValue1%> </td>
+ </tr>
+ <tr>
+  <td>Größter Wert<input style="width:50px;" name="HiValue1" length=20 type="number" value =%HiValue1%> </td>
+ </tr>
+
+  <tr> 
+  <th rowspan="2">Anschluss AN2: </th>
+  <td>Kleinster Wert<input style="width:50px;" name="LoValue2" length=20 type="number" value =%LoValue2%> </td>
+ </tr>
+ <tr>
+  <td>Größter Wert<input style="width:50px;" name="HiValue2" length=20 type="number" value =%HiValue2%> </td>
+ </tr>
+
+  <tr> 
+  <th rowspan="2">Anschluss AN3: </th>
+  <td>Kleinster Wert<input style="width:50px;" name="LoValue3" length=20 type="number" value =%LoValue3%> </td>
+ </tr>
+ <tr>
+  <td>Größter Wert<input style="width:50px;" name="HiValue3" length=20 type="number" value =%HiValue3%> </td>
+ </tr>
+
+  <tr> 
+  <th rowspan="2">Anschluss AN4: </th>
+  <td>Kleinster Wert<input style="width:50px;" name="LoValue4" length=20 type="number" value =%LoValue4%> </td>
+ </tr>
+ <tr>
+  <td>Größter Wert<input style="width:50px;" name="HiValue4" length=20 type="number" value =%HiValue4%> </td>
+ </tr>
+ 
+ </table>
+ <p><a href="/ADCValues">Zur Anzeige der Rohdaten</a></p>
+ <br><input type="submit"></form>
+</div>
+
+
+
+<script>
+function Reiter(evt, TabName) {
+  var i,tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(TabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+var inputTabName = document.getElementById('reiter').value;
+Reiter(event, inputTabName);
+</script>
+   
+</body>
+</html> 
+

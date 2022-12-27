@@ -1,6 +1,6 @@
 const DataTab = () => {
   return (
-    <div id='Daten' className='tabcontent'>
+    <div>
       <h1>Aktuelle Sensordaten</h1>
       <p>Temperatur %TempValue% C</p>
       <p>Luftdruck %PressureValue% hPa</p>
@@ -10,7 +10,7 @@ const DataTab = () => {
       <p>WiFi Qualität %RssiValue% %</p>
       {/* <p>Anzahl der Systemstarts %BOOTNUMBER% </p> */}
       <p>
-        <a href='/?ReiterName=Daten'>Anzeige aktualisieren</a>
+        <a href='/'>Anzeige aktualisieren</a>
       </p>
     </div>
   );
