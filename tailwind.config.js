@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   content: [],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {},
   },
   plugins: [],

@@ -1,6 +1,6 @@
 const DataTab = () => {
   return (
-    <div id='Daten' className='tabcontent'>
+    <div>
       <h1>Aktuelle Sensordaten</h1>
       <p>Temperatur %TempValue% C</p>
       <p>Luftdruck %PressureValue% hPa</p>

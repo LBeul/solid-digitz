@@ -5,26 +5,47 @@ import SenseIDTab from './tabs/SenseIDTab';
 import TabButton from './TabButton';
 import WifiTab from './tabs/WifiTab';
 
-const TABS = {
-  DATA: <DataTab />,
-  WIFI: <WifiTab />,
-  SENSE: <SenseIDTab />,
-  CAL: <CalibrationTab />,
-};
+const mappedTabs = new Map();
+mappedTabs.set('data', <DataTab />);
+mappedTabs.set('wifi', <WifiTab />);
+mappedTabs.set('sense', <SenseIDTab />);
+mappedTabs.set('cal', <CalibrationTab />);
 
 const TabContainer = () => {
-  const [tab, setTab] = createSignal('');
+  const [tabComponent, setTabComponent] = createSignal(null);
+  const [activeTab, setActiveTab] = createSignal('');
+
+  const changeTabs = (name) => {
+    setTabComponent(mappedTabs.get(name));
+    setActiveTab(name);
+  };
 
   return (
-    <>
-      <div>
-        <TabButton onClick={() => setTab(TABS.DATA)} tabLabel='Sensordaten' />
-        <TabButton onClick={() => setTab(TABS.WIFI)} tabLabel='WiFi' />
-        <TabButton onClick={() => setTab(TABS.SENSE)} tabLabel='openSenseMap' />
-        <TabButton onClick={() => setTab(TABS.CAL)} tabLabel='Kalibrierung' />
+    <div class='container mx-auto'>
+      <div class='flex sm:flex-row flex-col justify-between flex-wrap'>
+        <TabButton
+          onClick={() => changeTabs('data')}
+          isActive={activeTab() === 'data'}
+          tabLabel='Sensordaten'
+        />
+        <TabButton
+          onClick={() => changeTabs('wifi')}
+          isActive={activeTab() === 'wifi'}
+          tabLabel='WiFi'
+        />
+        <TabButton
+          onClick={() => changeTabs('sense')}
+          isActive={activeTab() === 'sense'}
+          tabLabel='openSenseMap'
+        />
+        <TabButton
+          onClick={() => changeTabs('cal')}
+          isActive={activeTab() === 'cal'}
+          tabLabel='Kalibrierung'
+        />
       </div>
-      {tab}
-    </>
+      {tabComponent}
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 const SenseIDTab = () => {
   return (
-    <div id='SenseID' className='tabcontent'>
+    <div>
       <h1>SensorIDs der openSenseMap</h1>
       <p>Geben Sie hier die SensorIDs ein</p>
       <form method='get' action='setsensor'>

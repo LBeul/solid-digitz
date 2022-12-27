@@ -1,6 +1,6 @@
 const WifiTab = () => {
   return (
-    <div id='WiFi' className='tabcontent'>
+    <div>
       <h1>Wi-Fi Settings</h1>
       <p>Bitte wählen Sie ein Wlan-Netzwerk und geben Sie das Passwort ein:.</p>
       <p>%FIRMWARE%</p>
