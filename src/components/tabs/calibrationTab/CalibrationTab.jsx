@@ -5,7 +5,7 @@ const CalibrationTab = () => {
   return (
     <div class='container flex flex-col'>
       <form method='get' action='setADCcal' class='container'>
-        <div class='text-lg font-semibold text-center my-5'>
+        <div class='text-xl font-bold text-center text-emerald-700 my-5'>
           Geben Sie hier die Kalibrierwerte ein
         </div>
         <CalibrationInputs valueNo='1' />
