@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import CalibrationTab from './tabs/CalibrationTab';
+import CalibrationTab from './tabs/calibration/CalibrationTab';
 import DataTab from './tabs/DataTab';
 import SenseIDTab from './tabs/SenseIDTab';
 import TabButton from './TabButton';
