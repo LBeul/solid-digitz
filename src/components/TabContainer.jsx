@@ -1,9 +1,9 @@
 import { createSignal } from 'solid-js';
 import CalibrationTab from './tabs/calibrationTab/CalibrationTab';
 import DataTab from './tabs/dataTab/DataTab';
-import SenseIDTab from './tabs/SenseIDTab';
+import SenseIDTab from './tabs/senseTab/SenseIDTab';
 import TabButton from './TabButton';
-import WifiTab from './tabs/WifiTab';
+import WifiTab from './tabs/wifiTab/WifiTab';
 
 const mappedTabs = new Map();
 mappedTabs.set('data', <DataTab />);

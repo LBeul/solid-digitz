@@ -1,4 +1,4 @@
-import LabelledInput from './LabelledInput';
+import LabelledInput from '../../LabelledInput';
 
 const CalibrationInputs = (props) => {
   const { valueNo } = props;
