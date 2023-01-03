@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Solid App</title>
+    <style>
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol,
+          'Noto Color Emoji';
+        font-feature-settings: normal;
+      }
+      .appearance-none {
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      *,
+      :before,
+      :after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+      }
+      :before,
+      :after {
+        --tw-content: '';
+      }
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol,
+          'Noto Color Emoji';
+        font-feature-settings: normal;
+      }
+      body {
+        margin: 0;
+        line-height: inherit;
+      }
+      hr {
+        height: 0;
+        color: inherit;
+        border-top-width: 1px;
+      }
+      abbr:where([title]) {
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      b,
+      strong {
+        font-weight: bolder;
+      }
+      code,
+      kbd,
+      samp,
+      pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          Liberation Mono, Courier New, monospace;
+        font-size: 1em;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      table {
+        text-indent: 0;
+        border-color: inherit;
+        border-collapse: collapse;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      button,
+      [type='button'],
+      [type='reset'],
+      [type='submit'] {
+        -webkit-appearance: button;
+        background-color: transparent;
+        background-image: none;
+      }
+      :-moz-focusring {
+        outline: auto;
+      }
+      :-moz-ui-invalid {
+        box-shadow: none;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      ::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type='search'] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      ::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      summary {
+        display: list-item;
+      }
+      blockquote,
+      dl,
+      dd,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      figure,
+      p,
+      pre {
+        margin: 0;
+      }
+      fieldset {
+        margin: 0;
+        padding: 0;
+      }
+      legend {
+        padding: 0;
+      }
+      ol,
+      ul,
+      menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      textarea {
+        resize: vertical;
+      }
+      input::-moz-placeholder,
+      textarea::-moz-placeholder {
+        opacity: 1;
+        color: #9ca3af;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        opacity: 1;
+        color: #9ca3af;
+      }
+      button,
+      [role='button'] {
+        cursor: pointer;
+      }
+      :disabled {
+        cursor: default;
+      }
+      img,
+      svg,
+      video,
+      canvas,
+      audio,
+      iframe,
+      embed,
+      object {
+        display: block;
+        vertical-align: middle;
+      }
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+      [hidden] {
+        display: none;
+      }
+      *,
+      :before,
+      :after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+      ::backdrop {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+      .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 640px) {
+        .container {
+          max-width: 640px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 768px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .container {
+          max-width: 1024px;
+        }
+      }
+      @media (min-width: 1280px) {
+        .container {
+          max-width: 1280px;
+        }
+      }
+      @media (min-width: 1536px) {
+        .container {
+          max-width: 1536px;
+        }
+      }
+      .m-2 {
+        margin: 0.5rem;
+      }
+      .m-3 {
+        margin: 0.75rem;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mx-3 {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+      }
+      .my-2 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .my-5 {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+      .my-8 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      .my-3 {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+      .mb-5 {
+        margin-bottom: 1.25rem;
+      }
+      .mr-1 {
+        margin-right: 0.25rem;
+      }
+      .ml-1 {
+        margin-left: 0.25rem;
+      }
+      .mb-1 {
+        margin-bottom: 0.25rem;
+      }
+      .mt-1 {
+        margin-top: 0.25rem;
+      }
+      .mt-5 {
+        margin-top: 1.25rem;
+      }
+      .mt-2 {
+        margin-top: 0.5rem;
+      }
+      .mb-10 {
+        margin-bottom: 2.5rem;
+      }
+      .block {
+        display: block;
+      }
+      .flex {
+        display: flex;
+      }
+      .h-px {
+        height: 1px;
+      }
+      .h-32 {
+        height: 8rem;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .w-20 {
+        width: 5rem;
+      }
+      .w-10 {
+        width: 2.5rem;
+      }
+      .basis-1\/5 {
+        flex-basis: 20%;
+      }
+      .basis-1\/3 {
+        flex-basis: 33.333333%;
+      }
+      .appearance-none {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .flex-row {
+        flex-direction: row;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+      .flex-nowrap {
+        flex-wrap: nowrap;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-end {
+        justify-content: flex-end;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
+      .rounded {
+        border-radius: 0.25rem;
+      }
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+      .rounded-md {
+        border-radius: 0.375rem;
+      }
+      .border {
+        border-width: 1px;
+      }
+      .border-0 {
+        border-width: 0px;
+      }
+      .border-r-8 {
+        border-right-width: 8px;
+      }
+      .border-solid {
+        border-style: solid;
+      }
+      .border-emerald-500 {
+        --tw-border-opacity: 1;
+        border-color: rgb(16 185 129 / var(--tw-border-opacity));
+      }
+      .border-emerald-200 {
+        --tw-border-opacity: 1;
+        border-color: rgb(167 243 208 / var(--tw-border-opacity));
+      }
+      .bg-transparent {
+        background-color: transparent;
+      }
+      .bg-emerald-500 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+      }
+      .bg-emerald-200 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(167 243 208 / var(--tw-bg-opacity));
+      }
+      .bg-white {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+      }
+      .bg-emerald-100 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(209 250 229 / var(--tw-bg-opacity));
+      }
+      .p-2 {
+        padding: 0.5rem;
+      }
+      .py-5 {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .px-3 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .pb-10 {
+        padding-bottom: 2.5rem;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .text-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+      .text-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .font-semibold {
+        font-weight: 600;
+      }
+      .font-medium {
+        font-weight: 500;
+      }
+      .leading-tight {
+        line-height: 1.25;
+      }
+      .text-emerald-700 {
+        --tw-text-opacity: 1;
+        color: rgb(4 120 87 / var(--tw-text-opacity));
+      }
+      .text-gray-700 {
+        --tw-text-opacity: 1;
+        color: rgb(55 65 81 / var(--tw-text-opacity));
+      }
+      .text-emerald-500 {
+        --tw-text-opacity: 1;
+        color: rgb(16 185 129 / var(--tw-text-opacity));
+      }
+      .text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+      }
+      .text-gray-900 {
+        --tw-text-opacity: 1;
+        color: rgb(17 24 39 / var(--tw-text-opacity));
+      }
+      .text-gray-500 {
+        --tw-text-opacity: 1;
+        color: rgb(107 114 128 / var(--tw-text-opacity));
+      }
+      .opacity-50 {
+        opacity: 0.5;
+      }
+      .shadow {
+        --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+          0 1px 2px -1px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+          0 1px 2px -1px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+          var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+      .hover\:border-transparent:hover {
+        border-color: transparent;
+      }
+      .hover\:bg-emerald-500:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+      }
+      .hover\:text-white:hover {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+      }
+      .focus\:outline-none:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+      @media (min-width: 640px) {
+        .sm\:m-0 {
+          margin: 0;
+        }
+        .sm\:mx-0 {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        .sm\:grid {
+          display: grid;
+        }
+        .sm\:grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .sm\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .sm\:flex-row {
+          flex-direction: row;
+        }
+        .sm\:gap-3 {
+          gap: 0.75rem;
+        }
+        .sm\:gap-2 {
+          gap: 0.5rem;
+        }
+        .sm\:gap-10 {
+          gap: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      (function () {
+        function r(e, n, t) {
+          function o(i, f) {
+            if (!n[i]) {
+              if (!e[i]) {
+                var c = 'function' == typeof require && require;
+                if (!f && c) return c(i, !0);
+                if (u) return u(i, !0);
+                var a = new Error("Cannot find module '" + i + "'");
+                throw ((a.code = 'MODULE_NOT_FOUND'), a);
+              }
+              var p = (n[i] = { exports: {} });
+              e[i][0].call(
+                p.exports,
+                function (r) {
+                  var n = e[i][1][r];
+                  return o(n || r);
+                },
+                p,
+                p.exports,
+                r,
+                e,
+                n,
+                t
+              );
+            }
+            return n[i].exports;
+          }
+          for (
+            var u = 'function' == typeof require && require, i = 0;
+            i < t.length;
+            i++
+          )
+            o(t[i]);
+          return o;
+        }
+        return r;
+      })()(
+        {
+          1: [
+            function (require, module, exports) {
+              (function () {
+                const n = document.createElement('link').relList;
+                if (n && n.supports && n.supports('modulepreload')) return;
+                for (const s of document.querySelectorAll(
+                  'link[rel="modulepreload"]'
+                ))
+                  l(s);
+                new MutationObserver((s) => {
+                  for (const i of s)
+                    if (i.type === 'childList')
+                      for (const r of i.addedNodes)
+                        r.tagName === 'LINK' &&
+                          r.rel === 'modulepreload' &&
+                          l(r);
+                }).observe(document, { childList: !0, subtree: !0 });
+                function t(s) {
+                  const i = {};
+                  return (
+                    s.integrity && (i.integrity = s.integrity),
+                    s.referrerpolicy && (i.referrerPolicy = s.referrerpolicy),
+                    s.crossorigin === 'use-credentials'
+                      ? (i.credentials = 'include')
+                      : s.crossorigin === 'anonymous'
+                      ? (i.credentials = 'omit')
+                      : (i.credentials = 'same-origin'),
+                    i
+                  );
+                }
+                function l(s) {
+                  if (s.ep) return;
+                  s.ep = !0;
+                  const i = t(s);
+                  fetch(s.href, i);
+                }
+              })();
+              const p = {};
+              function R(e) {
+                p.context = e;
+              }
+              function te() {
+                return {
+                  ...p.context,
+                  id: `${p.context.id}${p.context.count++}-`,
+                  count: 0,
+                };
+              }
+              const ne = (e, n) => e === n,
+                G = { equals: ne };
+              let le = X;
+              const w = 1,
+                E = 2,
+                Z = { owned: null, cleanups: null, context: null, owner: null };
+              var g = null;
+              let $ = null,
+                d = null,
+                h = null,
+                v = null,
+                F = 0;
+              function se(e, n) {
+                const t = d,
+                  l = g,
+                  s = e.length === 0,
+                  i = s
+                    ? Z
+                    : {
+                        owned: null,
+                        cleanups: null,
+                        context: null,
+                        owner: n || l,
+                      },
+                  r = s ? e : () => e(() => k(() => j(i)));
+                (g = i), (d = null);
+                try {
+                  return I(r, !0);
+                } finally {
+                  (d = t), (g = l);
+                }
+              }
+              function U(e, n) {
+                n = n ? Object.assign({}, G, n) : G;
+                const t = {
+                    value: e,
+                    observers: null,
+                    observerSlots: null,
+                    comparator: n.equals || void 0,
+                  },
+                  l = (s) => (
+                    typeof s == 'function' && (s = s(t.value)), Q(t, s)
+                  );
+                return [ie.bind(t), l];
+              }
+              function N(e, n, t) {
+                const l = re(e, n, !1, w);
+                H(l);
+              }
+              function k(e) {
+                const n = d;
+                d = null;
+                try {
+                  return e();
+                } finally {
+                  d = n;
+                }
+              }
+              function ie() {
+                const e = $;
+                if (this.sources && (this.state || e))
+                  if (this.state === w || e) H(this);
+                  else {
+                    const n = h;
+                    (h = null), I(() => B(this), !1), (h = n);
+                  }
+                if (d) {
+                  const n = this.observers ? this.observers.length : 0;
+                  d.sources
+                    ? (d.sources.push(this), d.sourceSlots.push(n))
+                    : ((d.sources = [this]), (d.sourceSlots = [n])),
+                    this.observers
+                      ? (this.observers.push(d),
+                        this.observerSlots.push(d.sources.length - 1))
+                      : ((this.observers = [d]),
+                        (this.observerSlots = [d.sources.length - 1]));
+                }
+                return this.value;
+              }
+              function Q(e, n, t) {
+                let l = e.value;
+                return (
+                  (!e.comparator || !e.comparator(l, n)) &&
+                    ((e.value = n),
+                    e.observers &&
+                      e.observers.length &&
+                      I(() => {
+                        for (let s = 0; s < e.observers.length; s += 1) {
+                          const i = e.observers[s],
+                            r = $ && $.running;
+                          r && $.disposed.has(i),
+                            ((r && !i.tState) || (!r && !i.state)) &&
+                              (i.pure ? h.push(i) : v.push(i),
+                              i.observers && J(i)),
+                            r || (i.state = w);
+                        }
+                        if (h.length > 1e6) throw ((h = []), new Error());
+                      }, !1)),
+                  n
+                );
+              }
+              function H(e) {
+                if (!e.fn) return;
+                j(e);
+                const n = g,
+                  t = d,
+                  l = F;
+                (d = g = e), oe(e, e.value, l), (d = t), (g = n);
+              }
+              function oe(e, n, t) {
+                let l;
+                try {
+                  l = e.fn(n);
+                } catch (s) {
+                  e.pure && (e.state = w), Y(s);
+                }
+                (!e.updatedAt || e.updatedAt <= t) &&
+                  (e.updatedAt != null && 'observers' in e
+                    ? Q(e, l)
+                    : (e.value = l),
+                  (e.updatedAt = t));
+              }
+              function re(e, n, t, l = w, s) {
+                const i = {
+                  fn: e,
+                  state: l,
+                  updatedAt: null,
+                  owned: null,
+                  sources: null,
+                  sourceSlots: null,
+                  cleanups: null,
+                  value: n,
+                  owner: g,
+                  context: null,
+                  pure: t,
+                };
+                return (
+                  g === null ||
+                    (g !== Z && (g.owned ? g.owned.push(i) : (g.owned = [i]))),
+                  i
+                );
+              }
+              function z(e) {
+                const n = $;
+                if (e.state === 0 || n) return;
+                if (e.state === E || n) return B(e);
+                if (e.suspense && k(e.suspense.inFallback))
+                  return e.suspense.effects.push(e);
+                const t = [e];
+                for (; (e = e.owner) && (!e.updatedAt || e.updatedAt < F); )
+                  (e.state || n) && t.push(e);
+                for (let l = t.length - 1; l >= 0; l--)
+                  if (((e = t[l]), e.state === w || n)) H(e);
+                  else if (e.state === E || n) {
+                    const s = h;
+                    (h = null), I(() => B(e, t[0]), !1), (h = s);
+                  }
+              }
+              function I(e, n) {
+                if (h) return e();
+                let t = !1;
+                n || (h = []), v ? (t = !0) : (v = []), F++;
+                try {
+                  const l = e();
+                  return ae(t), l;
+                } catch (l) {
+                  h || (v = null), Y(l);
+                }
+              }
+              function ae(e) {
+                if ((h && (X(h), (h = null)), e)) return;
+                const n = v;
+                (v = null), n.length && I(() => le(n), !1);
+              }
+              function X(e) {
+                for (let n = 0; n < e.length; n++) z(e[n]);
+              }
+              function B(e, n) {
+                const t = $;
+                e.state = 0;
+                for (let l = 0; l < e.sources.length; l += 1) {
+                  const s = e.sources[l];
+                  s.sources &&
+                    (s.state === w || t
+                      ? s !== n && z(s)
+                      : (s.state === E || t) && B(s, n));
+                }
+              }
+              function J(e) {
+                const n = $;
+                for (let t = 0; t < e.observers.length; t += 1) {
+                  const l = e.observers[t];
+                  (!l.state || n) &&
+                    ((l.state = E),
+                    l.pure ? h.push(l) : v.push(l),
+                    l.observers && J(l));
+                }
+              }
+              function j(e) {
+                let n;
+                if (e.sources)
+                  for (; e.sources.length; ) {
+                    const t = e.sources.pop(),
+                      l = e.sourceSlots.pop(),
+                      s = t.observers;
+                    if (s && s.length) {
+                      const i = s.pop(),
+                        r = t.observerSlots.pop();
+                      l < s.length &&
+                        ((i.sourceSlots[r] = l),
+                        (s[l] = i),
+                        (t.observerSlots[l] = r));
+                    }
+                  }
+                if (e.owned) {
+                  for (n = 0; n < e.owned.length; n++) j(e.owned[n]);
+                  e.owned = null;
+                }
+                if (e.cleanups) {
+                  for (n = 0; n < e.cleanups.length; n++) e.cleanups[n]();
+                  e.cleanups = null;
+                }
+                (e.state = 0), (e.context = null);
+              }
+              function ce(e) {
+                return e instanceof Error || typeof e == 'string'
+                  ? e
+                  : new Error('Unknown error');
+              }
+              function Y(e) {
+                throw ((e = ce(e)), e);
+              }
+              let ue = !1;
+              function c(e, n) {
+                if (ue && p.context) {
+                  const t = p.context;
+                  R(te());
+                  const l = k(() => e(n || {}));
+                  return R(t), l;
+                }
+                return k(() => e(n || {}));
+              }
+              function fe(e, n, t) {
+                let l = t.length,
+                  s = n.length,
+                  i = l,
+                  r = 0,
+                  o = 0,
+                  u = n[s - 1].nextSibling,
+                  f = null;
+                for (; r < s || o < i; ) {
+                  if (n[r] === t[o]) {
+                    r++, o++;
+                    continue;
+                  }
+                  for (; n[s - 1] === t[i - 1]; ) s--, i--;
+                  if (s === r) {
+                    const x = i < l ? (o ? t[o - 1].nextSibling : t[i - o]) : u;
+                    for (; o < i; ) e.insertBefore(t[o++], x);
+                  } else if (i === o)
+                    for (; r < s; ) (!f || !f.has(n[r])) && n[r].remove(), r++;
+                  else if (n[r] === t[i - 1] && t[o] === n[s - 1]) {
+                    const x = n[--s].nextSibling;
+                    e.insertBefore(t[o++], n[r++].nextSibling),
+                      e.insertBefore(t[--i], x),
+                      (n[s] = t[i]);
+                  } else {
+                    if (!f) {
+                      f = new Map();
+                      let y = o;
+                      for (; y < i; ) f.set(t[y], y++);
+                    }
+                    const x = f.get(n[r]);
+                    if (x != null)
+                      if (o < x && x < i) {
+                        let y = r,
+                          V = 1,
+                          M;
+                        for (
+                          ;
+                          ++y < s &&
+                          y < i &&
+                          !((M = f.get(n[y])) == null || M !== x + V);
+
+                        )
+                          V++;
+                        if (V > x - o) {
+                          const ee = n[r];
+                          for (; o < x; ) e.insertBefore(t[o++], ee);
+                        } else e.replaceChild(t[o++], n[r++]);
+                      } else r++;
+                    else n[r++].remove();
+                  }
+                }
+              }
+              const q = '_$DX_DELEGATE';
+              function de(e, n, t, l = {}) {
+                let s;
+                return (
+                  se((i) => {
+                    (s = i),
+                      n === document
+                        ? e()
+                        : a(n, e(), n.firstChild ? null : void 0, t);
+                  }, l.owner),
+                  () => {
+                    s(), (n.textContent = '');
+                  }
+                );
+              }
+              function b(e, n, t) {
+                const l = document.createElement('template');
+                l.innerHTML = e;
+                let s = l.content.firstChild;
+                return t && (s = s.firstChild), s;
+              }
+              function me(e, n = window.document) {
+                const t = n[q] || (n[q] = new Set());
+                for (let l = 0, s = e.length; l < s; l++) {
+                  const i = e[l];
+                  t.has(i) || (t.add(i), n.addEventListener(i, pe));
+                }
+              }
+              function m(e, n, t) {
+                t == null ? e.removeAttribute(n) : e.setAttribute(n, t);
+              }
+              function he(e, n) {
+                n == null ? e.removeAttribute('class') : (e.className = n);
+              }
+              function be(e, n, t, l) {
+                if (l)
+                  Array.isArray(t)
+                    ? ((e[`$$${n}`] = t[0]), (e[`$$${n}Data`] = t[1]))
+                    : (e[`$$${n}`] = t);
+                else if (Array.isArray(t)) {
+                  const s = t[0];
+                  e.addEventListener(n, (t[0] = (i) => s.call(e, t[1], i)));
+                } else e.addEventListener(n, t);
+              }
+              function xe(e, n, t) {
+                if (!n) return t ? m(e, 'style') : n;
+                const l = e.style;
+                if (typeof n == 'string') return (l.cssText = n);
+                typeof t == 'string' && (l.cssText = t = void 0),
+                  t || (t = {}),
+                  n || (n = {});
+                let s, i;
+                for (i in t) n[i] == null && l.removeProperty(i), delete t[i];
+                for (i in n)
+                  (s = n[i]), s !== t[i] && (l.setProperty(i, s), (t[i] = s));
+                return t;
+              }
+              function a(e, n, t, l) {
+                if ((t !== void 0 && !l && (l = []), typeof n != 'function'))
+                  return P(e, n, l, t);
+                N((s) => P(e, n(), s, t), l);
+              }
+              function pe(e) {
+                const n = `$$${e.type}`;
+                let t = (e.composedPath && e.composedPath()[0]) || e.target;
+                for (
+                  e.target !== t &&
+                    Object.defineProperty(e, 'target', {
+                      configurable: !0,
+                      value: t,
+                    }),
+                    Object.defineProperty(e, 'currentTarget', {
+                      configurable: !0,
+                      get() {
+                        return t || document;
+                      },
+                    }),
+                    p.registry &&
+                      !p.done &&
+                      ((p.done = !0),
+                      document
+                        .querySelectorAll('[id^=pl-]')
+                        .forEach((l) => l.remove()));
+                  t !== null;
+
+                ) {
+                  const l = t[n];
+                  if (l && !t.disabled) {
+                    const s = t[`${n}Data`];
+                    if (
+                      (s !== void 0 ? l.call(t, s, e) : l.call(t, e),
+                      e.cancelBubble)
+                    )
+                      return;
+                  }
+                  t =
+                    t.host && t.host !== t && t.host instanceof Node
+                      ? t.host
+                      : t.parentNode;
+                }
+              }
+              function P(e, n, t, l, s) {
+                for (
+                  p.context && !t && (t = [...e.childNodes]);
+                  typeof t == 'function';
+
+                )
+                  t = t();
+                if (n === t) return t;
+                const i = typeof n,
+                  r = l !== void 0;
+                if (
+                  ((e = (r && t[0] && t[0].parentNode) || e),
+                  i === 'string' || i === 'number')
+                ) {
+                  if (p.context) return t;
+                  if ((i === 'number' && (n = n.toString()), r)) {
+                    let o = t[0];
+                    o && o.nodeType === 3
+                      ? (o.data = n)
+                      : (o = document.createTextNode(n)),
+                      (t = S(e, t, l, o));
+                  } else
+                    t !== '' && typeof t == 'string'
+                      ? (t = e.firstChild.data = n)
+                      : (t = e.textContent = n);
+                } else if (n == null || i === 'boolean') {
+                  if (p.context) return t;
+                  t = S(e, t, l);
+                } else {
+                  if (i === 'function')
+                    return (
+                      N(() => {
+                        let o = n();
+                        for (; typeof o == 'function'; ) o = o();
+                        t = P(e, o, t, l);
+                      }),
+                      () => t
+                    );
+                  if (Array.isArray(n)) {
+                    const o = [],
+                      u = t && Array.isArray(t);
+                    if (O(o, n, t, s))
+                      return N(() => (t = P(e, o, t, l, !0))), () => t;
+                    if (p.context) {
+                      if (!o.length) return t;
+                      for (let f = 0; f < o.length; f++)
+                        if (o[f].parentNode) return (t = o);
+                    }
+                    if (o.length === 0) {
+                      if (((t = S(e, t, l)), r)) return t;
+                    } else
+                      u
+                        ? t.length === 0
+                          ? K(e, o, l)
+                          : fe(e, t, o)
+                        : (t && S(e), K(e, o));
+                    t = o;
+                  } else if (n instanceof Node) {
+                    if (p.context && n.parentNode) return (t = r ? [n] : n);
+                    if (Array.isArray(t)) {
+                      if (r) return (t = S(e, t, l, n));
+                      S(e, t, null, n);
+                    } else
+                      t == null || t === '' || !e.firstChild
+                        ? e.appendChild(n)
+                        : e.replaceChild(n, e.firstChild);
+                    t = n;
+                  }
+                }
+                return t;
+              }
+              function O(e, n, t, l) {
+                let s = !1;
+                for (let i = 0, r = n.length; i < r; i++) {
+                  let o = n[i],
+                    u = t && t[i];
+                  if (o instanceof Node) e.push(o);
+                  else if (!(o == null || o === !0 || o === !1))
+                    if (Array.isArray(o)) s = O(e, o, u) || s;
+                    else if (typeof o == 'function')
+                      if (l) {
+                        for (; typeof o == 'function'; ) o = o();
+                        s =
+                          O(
+                            e,
+                            Array.isArray(o) ? o : [o],
+                            Array.isArray(u) ? u : [u]
+                          ) || s;
+                      } else e.push(o), (s = !0);
+                    else {
+                      const f = String(o);
+                      u && u.nodeType === 3 && u.data === f
+                        ? e.push(u)
+                        : e.push(document.createTextNode(f));
+                    }
+                }
+                return s;
+              }
+              function K(e, n, t = null) {
+                for (let l = 0, s = n.length; l < s; l++)
+                  e.insertBefore(n[l], t);
+              }
+              function S(e, n, t, l) {
+                if (t === void 0) return (e.textContent = '');
+                const s = l || document.createTextNode('');
+                if (n.length) {
+                  let i = !1;
+                  for (let r = n.length - 1; r >= 0; r--) {
+                    const o = n[r];
+                    if (s !== o) {
+                      const u = o.parentNode === e;
+                      !i && !r
+                        ? u
+                          ? e.replaceChild(s, o)
+                          : e.insertBefore(s, t)
+                        : u && o.remove();
+                    } else i = !0;
+                  }
+                } else e.insertBefore(s, t);
+                return [s];
+              }
+              const ge = b(
+                  '<div class="mx-3 sm:mx-0"><label class="block text-emerald-700 text-sm font-bold my-2"></label><input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></div>'
+                ),
+                A = ({
+                  label: e,
+                  inputId: n,
+                  type: t = 'number',
+                  length: l = 20,
+                  defaultValue: s,
+                }) =>
+                  (() => {
+                    const i = ge.cloneNode(!0),
+                      r = i.firstChild,
+                      o = r.nextSibling;
+                    return (
+                      m(r, 'for', n),
+                      a(r, e),
+                      m(o, 'name', n),
+                      m(o, 'id', n),
+                      m(o, 'length', l),
+                      m(o, 'type', t),
+                      m(o, 'defaultvalue', s ?? `%${n}%`),
+                      i
+                    );
+                  })(),
+                ye = b(
+                  '<div class="container flex flex-col sm:flex-row justify-between my-2"><div class="text-center my-auto text-md font-bold"></div></div>'
+                ),
+                D = (e) => {
+                  const { valueNo: n } = e;
+                  return (() => {
+                    const t = ye.cloneNode(!0),
+                      l = t.firstChild;
+                    return (
+                      a(l, `Anschluss AN-${n}`),
+                      a(
+                        t,
+                        c(A, {
+                          label: 'Kleinster Wert',
+                          inputId: `LoValue${n}`,
+                        }),
+                        null
+                      ),
+                      a(
+                        t,
+                        c(A, {
+                          label: 'Gr\xF6\xDFter Wert',
+                          inputId: `HiValue${n}`,
+                        }),
+                        null
+                      ),
+                      t
+                    );
+                  })();
+                },
+                $e = b(
+                  '<hr class="my-5 h-px mx-3 sm:mx-0 bg-emerald-200 border-0">'
+                ),
+                W = () => $e.cloneNode(!0),
+                ve = b(
+                  '<div class="container flex flex-col"><form method="get" action="setADCcal" class="container"><div class="text-xl font-bold text-center text-emerald-700 my-5">Geben Sie hier die Kalibrierwerte ein</div><div class="container flex flex-row justify-center my-8"><button class="basis-1/3 bg-transparent hover:bg-emerald-500 font-semibold hover:text-white border border-emerald-500 hover:border-transparent text-emerald-500 py-2 px-4 rounded mr-1">Zur Anzeige der Rohdaten</button><input class="basis-1/3 bg-transparent hover:bg-emerald-500 font-semibold hover:text-white border border-emerald-500 hover:border-transparent text-emerald-500 py-2 px-4 rounded ml-1" type="submit"></div></form></div>'
+                ),
+                we = () =>
+                  (() => {
+                    const e = ve.cloneNode(!0),
+                      n = e.firstChild,
+                      t = n.firstChild,
+                      l = t.nextSibling;
+                    return (
+                      a(n, c(D, { valueNo: '1' }), l),
+                      a(n, c(W, {}), l),
+                      a(n, c(D, { valueNo: '2' }), l),
+                      a(n, c(W, {}), l),
+                      a(n, c(D, { valueNo: '3' }), l),
+                      a(n, c(W, {}), l),
+                      a(n, c(D, { valueNo: '4' }), l),
+                      e
+                    );
+                  })(),
+                Se = b(
+                  '<div class="container w-20 my-3"><div class="text-xs text-emerald-700 font-bold text-center mb-1"></div><div class="flex flex-col flex-nowrap justify-end w-20 h-32 bg-emerald-100 rounded-md overflow-hidden text-xs text-white text-center"><div class="bg-emerald-500 overflow-hidden" role="progressbar"></div></div><div class="text-xs text-emerald-700 font-bold text-center mt-1"></div></div>'
+                ),
+                _e = ({ value: e, maxVal: n, minVal: t, measurement: l }) =>
+                  (() => {
+                    const s = Se.cloneNode(!0),
+                      i = s.firstChild,
+                      r = i.nextSibling,
+                      o = r.firstChild,
+                      u = r.nextSibling;
+                    return (
+                      a(i, `${n}`),
+                      m(o, 'aria-valuenow', e),
+                      m(o, 'aria-valuemin', t),
+                      m(o, 'aria-valuemax', n),
+                      a(o, `${e} ${l}`),
+                      a(u, `${t}`),
+                      N((f) => xe(o, `height: ${Ce(t, n, e)}%`, f)),
+                      s
+                    );
+                  })(),
+                Ce = (e, n, t) => {
+                  const l = n - e;
+                  return e < 0 && n >= 0 && t >= 0
+                    ? ((t - e) / l) * 100
+                    : (t / l) * 100;
+                },
+                Ae = b(
+                  '<div class="bg-white border border-emerald-200 rounded-lg m-3 sm:m-0"><div class="flex flex-col items-center pb-10"><h5 class="mb-1 text-xl font-medium text-gray-900"></h5><span class="text-sm text-gray-500"></span></div></div>'
+                ),
+                _ = ({ label: e, unit: n, value: t, max: l, min: s }) =>
+                  (() => {
+                    const i = Ae.cloneNode(!0),
+                      r = i.firstChild,
+                      o = r.firstChild,
+                      u = o.nextSibling;
+                    return (
+                      a(
+                        r,
+                        c(_e, {
+                          value: t,
+                          measurement: n,
+                          maxVal: l,
+                          minVal: s,
+                        }),
+                        o
+                      ),
+                      a(o, e),
+                      a(u, `gemessen in ${n}`),
+                      i
+                    );
+                  })(),
+                Ne = b(
+                  '<div class="container"><div class="text-xl font-bold text-center text-emerald-700 my-5">Aktuelle Sensordaten</div><div class="sm:grid flex flex-col sm:grid-cols-3 sm:gap-3"></div></div>'
+                ),
+                Ie = () =>
+                  (() => {
+                    const e = Ne.cloneNode(!0),
+                      n = e.firstChild,
+                      t = n.nextSibling;
+                    return (
+                      a(
+                        t,
+                        c(_, {
+                          label: 'Temperatur',
+                          unit: 'C\xB0',
+                          value: 20,
+                          max: 40,
+                          min: -30,
+                        }),
+                        null
+                      ),
+                      a(
+                        t,
+                        c(_, {
+                          label: 'Luftdruck',
+                          unit: 'hPa',
+                          value: 60,
+                          max: 100,
+                          min: 0,
+                        }),
+                        null
+                      ),
+                      a(
+                        t,
+                        c(_, {
+                          label: 'Luftfeuchtigkeit',
+                          unit: '%',
+                          value: 83,
+                          max: 100,
+                          min: 0,
+                        }),
+                        null
+                      ),
+                      a(
+                        t,
+                        c(_, {
+                          label: 'Lichtintensit\xE4t',
+                          unit: 'Lux',
+                          value: 90,
+                          max: 300,
+                          min: 0,
+                        }),
+                        null
+                      ),
+                      a(
+                        t,
+                        c(_, {
+                          label: 'Bodenfeuchte',
+                          unit: '%',
+                          value: 12,
+                          max: 100,
+                          min: 0,
+                        }),
+                        null
+                      ),
+                      a(
+                        t,
+                        c(_, {
+                          label: 'WiFi Qualit\xE4t',
+                          unit: '%',
+                          value: 77,
+                          max: 100,
+                          min: 0,
+                        }),
+                        null
+                      ),
+                      e
+                    );
+                  })(),
+                Te = b(
+                  '<div class="m-3 sm:m-0"><fieldset class="container flex flex-row justify-center"><legend class="block text-emerald-700 text-sm font-bold my-2 w-full text-center"></legend><input class="shadow appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></fieldset></div>'
+                ),
+                De = b(
+                  '<input class="shadowaccent-emerald-600 w-10 opacity-50 leading-tight" type="checkbox" disabled>'
+                ),
+                C = ({
+                  label: e,
+                  inputId: n,
+                  checkBoxId: t,
+                  type: l,
+                  length: s,
+                  defaultValue: i,
+                }) =>
+                  (() => {
+                    const r = Te.cloneNode(!0),
+                      o = r.firstChild,
+                      u = o.firstChild,
+                      f = u.nextSibling;
+                    return (
+                      a(u, e),
+                      m(f, 'type', l),
+                      m(f, 'name', n),
+                      m(f, 'id', n),
+                      m(f, 'length', s),
+                      m(f, 'defaultvalue', i ?? `%${n}%`),
+                      a(
+                        o,
+                        t &&
+                          (() => {
+                            const x = De.cloneNode(!0);
+                            return m(x, 'name', t), (x.checked = !0), x;
+                          })(),
+                        null
+                      ),
+                      r
+                    );
+                  })(),
+                Le = b(
+                  '<div class="container flex flex-col"><h1 class="text-xl font-bold text-center text-emerald-700 mt-5 mx-3 sm:mx-0">SensorIDs der openSenseMap</h1><h2 class="text-md text-emerald-500 text-center mt-2 mb-5">Geben Sie hier die SensorIDs ein</h2><form method="get" action="setsensor"><div class="container sm:grid flex flex-col sm:grid-cols-2 sm:gap-2 mb-10"></div><div class="sm:grid flex flex-col sm:grid-cols-3 sm:gap-10"></div><div class="container sm:grid flex flex-col sm:grid-cols-2 sm:gap-10 mb-10"><input type="submit" class="bg-transparent hover:bg-emerald-500 font-semibold hover:text-white border border-emerald-500 hover:border-transparent text-emerald-500 py-2 px-4 rounded my-5 mx-3 sm:mx-0"><button class="bg-transparent hover:bg-emerald-500 font-semibold hover:text-white border border-emerald-500 hover:border-transparent text-emerald-500 py-2 px-4 rounded my-5 mx-3 sm:mx-0">Daten auf openSenseMap anzeigen</button></div></form></div>'
+                ),
+                Ee = () =>
+                  (() => {
+                    const e = Le.cloneNode(!0),
+                      n = e.firstChild,
+                      t = n.nextSibling,
+                      l = t.nextSibling,
+                      s = l.firstChild,
+                      i = s.nextSibling;
+                    return (
+                      a(
+                        s,
+                        c(A, {
+                          label: 'Access Token',
+                          inputId: 'authcode',
+                          type: 'text',
+                          length: 180,
+                          defaultValue: '%AuthCodeID%',
+                        }),
+                        null
+                      ),
+                      a(
+                        s,
+                        c(A, {
+                          label: 'SenseBox ID',
+                          inputId: 'gbid',
+                          type: 'text',
+                          length: 80,
+                          defaultValue: '%GnomeBoxID%',
+                        }),
+                        null
+                      ),
+                      a(
+                        i,
+                        c(C, {
+                          label: 'Temperatursensor ID',
+                          inputId: 'tempsense',
+                          checkBoxId: 'boolTemp',
+                          type: 'text',
+                          length: 80,
+                          defaultValue: '%TempSenseID%',
+                        }),
+                        null
+                      ),
+                      a(
+                        i,
+                        c(C, {
+                          label: 'Luftdrucksensor ID',
+                          inputId: 'pressuresense',
+                          checkBoxId: 'boolPressure',
+                          type: 'text',
+                          length: 80,
+                          defaultValue: '%PressureSenseID%',
+                        }),
+                        null
+                      ),
+                      a(
+                        i,
+                        c(C, {
+                          label: 'Luftfeuchtigkeitssensor ID',
+                          inputId: 'humidsense',
+                          checkBoxId: 'boolHumid',
+                          type: 'text',
+                          length: 80,
+                          defaultValue: '%HumidSenseID%',
+                        }),
+                        null
+                      ),
+                      a(
+                        i,
+                        c(C, {
+                          label: 'Helligkeitssensor ID',
+                          inputId: 'luxsense',
+                          checkBoxId: 'boolLux',
+                          type: 'text',
+                          length: 80,
+                          defaultValue: '%LuxSenseID%',
+                        }),
+                        null
+                      ),
+                      a(
+                        i,
+                        c(C, {
+                          label: 'Bodenfeuchtesensor ID',
+                          inputId: 'soilsense',
+                          checkBoxId: 'boolSoil',
+                          type: 'text',
+                          length: 80,
+                          defaultValue: '%SoilSenseID%',
+                        }),
+                        null
+                      ),
+                      a(
+                        i,
+                        c(C, {
+                          label: 'DigitZ-WLAN ID',
+                          inputId: 'rssi',
+                          checkBoxId: 'boolRssi',
+                          type: 'text',
+                          length: 80,
+                          defaultValue: '%RssiID%',
+                        }),
+                        null
+                      ),
+                      e
+                    );
+                  })(),
+                ke = b('<button></button>'),
+                Be =
+                  'bg-transparent hover:bg-emerald-500 font-semibold hover:text-white border border-emerald-500 hover:border-transparent text-emerald-500 py-2 px-4 rounded basis-1/5 sm:m-0 m-2',
+                Pe =
+                  'bg-emerald-500 hover:bg-emerald-500 font-semibold text-white py-2 px-4 rounded basis-1/5 sm:m-0 m-2',
+                L = (e) =>
+                  (() => {
+                    const n = ke.cloneNode(!0);
+                    return (
+                      be(n, 'click', e.onClick, !0),
+                      a(n, () => e.tabLabel),
+                      N(() => he(n, e.isActive ? Pe : Be)),
+                      n
+                    );
+                  })();
+              me(['click']);
+              const Ve = b(
+                  '<div class="mx-3 sm:mx-0"><label class="block my-2 text-sm font-bold text-emerald-700"></label><select class="shadow form-select bg-grey-50 border border-grey-300 text-grey-900 text-sm rounded focus:ring-grey-500 focus:border-grey-500 block w-full p-2 border-r-8 border-solid">%ssidList%</select></div>'
+                ),
+                We = ({ label: e, dropDownId: n }) =>
+                  (() => {
+                    const t = Ve.cloneNode(!0),
+                      l = t.firstChild,
+                      s = l.nextSibling;
+                    return (
+                      m(l, 'for', n), a(l, e), m(s, 'name', n), m(s, 'id', n), t
+                    );
+                  })(),
+                Oe = b(
+                  '<div class="container flex flex-col"><h1 class="text-xl font-bold text-center text-emerald-700 my-5 mx-3 sm:mx-0">Wi-Fi Settings</h1><h2 class="text-md text-emerald-500 text-center">%FIRMWARE%</h2><h3 class="text-base font-semibold my-5 mx-3 sm:mx-0">Bitte w\xE4hlen Sie ein WLAN-Netzwerk und geben Sie das Passwort ein:</h3><form method="get" action="setwifi"><h3 class="text-base font-semibold my-5 mx-3 sm:mx-0">Geben Sie einen Netzwerknamen f\xFCr die Box ein:</h3><input class="bg-transparent hover:bg-emerald-500 font-semibold hover:text-white border border-emerald-500 hover:border-transparent text-emerald-500 py-2 px-4 rounded my-5 mx-3 sm:mx-0" type="submit"></form></div>'
+                ),
+                Fe = () =>
+                  (() => {
+                    const e = Oe.cloneNode(!0),
+                      n = e.firstChild,
+                      t = n.nextSibling,
+                      l = t.nextSibling,
+                      s = l.nextSibling,
+                      i = s.firstChild,
+                      r = i.nextSibling;
+                    return (
+                      a(s, c(We, { label: 'SSID', dropDownId: 'ssid' }), i),
+                      a(
+                        s,
+                        c(A, {
+                          label: 'Password',
+                          inputId: 'pass',
+                          type: 'password',
+                          length: 64,
+                        }),
+                        i
+                      ),
+                      a(
+                        s,
+                        c(A, {
+                          label: 'Netzwerkname',
+                          inputId: 'networkname',
+                          type: 'text',
+                          length: 180,
+                          defaultValue: '%NetworkName%',
+                        }),
+                        r
+                      ),
+                      e
+                    );
+                  })(),
+                He = b(
+                  '<div class="container mx-auto"><div class="flex sm:flex-row flex-col justify-between flex-wrap"></div></div>'
+                ),
+                T = new Map();
+              T.set('data', c(Ie, {}));
+              T.set('wifi', c(Fe, {}));
+              T.set('sense', c(Ee, {}));
+              T.set('cal', c(we, {}));
+              const je = () => {
+                  const [e, n] = U(null),
+                    [t, l] = U(''),
+                    s = (i) => {
+                      n(T.get(i)), l(i);
+                    };
+                  return (() => {
+                    const i = He.cloneNode(!0),
+                      r = i.firstChild;
+                    return (
+                      a(
+                        r,
+                        c(L, {
+                          onClick: () => s('data'),
+                          get isActive() {
+                            return t() === 'data';
+                          },
+                          tabLabel: 'Sensordaten',
+                        }),
+                        null
+                      ),
+                      a(
+                        r,
+                        c(L, {
+                          onClick: () => s('wifi'),
+                          get isActive() {
+                            return t() === 'wifi';
+                          },
+                          tabLabel: 'WiFi',
+                        }),
+                        null
+                      ),
+                      a(
+                        r,
+                        c(L, {
+                          onClick: () => s('sense'),
+                          get isActive() {
+                            return t() === 'sense';
+                          },
+                          tabLabel: 'openSenseMap',
+                        }),
+                        null
+                      ),
+                      a(
+                        r,
+                        c(L, {
+                          onClick: () => s('cal'),
+                          get isActive() {
+                            return t() === 'cal';
+                          },
+                          tabLabel: 'Kalibrierung',
+                        }),
+                        null
+                      ),
+                      a(i, e, null),
+                      i
+                    );
+                  })();
+                },
+                Me = b(
+                  '<div class="container mx-auto py-5"><h2 class="text-center text-2xl font-bold mb-5">Einstellungen f\xFCr DigitZ %NetworkName%</h2></div>'
+                );
+              function Re() {
+                return (() => {
+                  const e = Me.cloneNode(!0);
+                  return e.firstChild, a(e, c(je, {}), null), e;
+                })();
+              }
+              de(() => c(Re, {}), document.getElementById('root'));
+            },
+            {},
+          ],
+        },
+        {},
+        [1]
+      );
+    </script>
+  </body>
+</html>
