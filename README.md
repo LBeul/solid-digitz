@@ -1,6 +1,6 @@
 # DigitZ GUI
 
-This is a graphical interface for the **[DigitZ]**(https://deutsche-schreberjugend.de/digitz-smartes-gaertnern/), a sensor-equipped microcontroller to gather & process gardening data.
+This is a graphical interface for the **[DigitZ](https://deutsche-schreberjugend.de/digitz-smartes-gaertnern/)**, a sensor-equipped microcontroller to gather & process gardening data.
 
 The **DigitZ** is an ESP32 board sporting an Intel M5 Atom CPU. It's very limited in storage and memory, which makes using modern frontend libraries very difficult. The total front end build must be smaller than 100kB.
 
