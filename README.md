@@ -36,9 +36,8 @@ yarn build
 ## Combine Resources into Single File to be served by an ESP32
 
 1. run the above explained `build` command
-2. compile your js module using `browserify myFile.js --outfile script.js` (make sure to subsitute `myFile` with the index.bla.js in your `/dist` folder
-3. Substitute the `<script script type="module" crossorigin...` with a simple `<script>...</script>` and paste in your compiled js file
-4. Copy the css code and also insert it as simple `<style>...</style>` element. Remove the other cross-orifin import, too.
+2. Substitute the `<script script type="module" crossorigin...` with a simple `<script>...</script>` and paste in your compiled js file's content
+3. Copy the css code and also insert it as simple `<style>...</style>` element. Remove the other cross-orifin import, too.
 
 ## About SolidJS
 
