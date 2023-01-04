@@ -17,7 +17,6 @@ To solve this issues, we came up with the following stack:
 
 - **SolidJS** as a super small build-size alternative for ReactJS
 - **TailwindCSS** for styling with utility classes & purging unused CSS
-- **Browserify** for bundling up the built JS modules into browser-used code
 
 ## Run dev locally
 
