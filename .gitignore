@@ -1,5 +1,8 @@
+# Own additions:
+
 node_modules
 dist
+build
 
 # Created by https://www.toptal.com/developers/gitignore/api/react,node,visualstudiocode,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=react,node,visualstudiocode,macos
