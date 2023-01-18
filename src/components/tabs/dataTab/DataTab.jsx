@@ -1,5 +1,4 @@
 import DataTile from './DataTile';
-import ProgressBar from './ProgressBar';
 
 const DataTab = () => {
   return (
