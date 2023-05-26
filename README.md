@@ -41,6 +41,8 @@ yarn build
 4. Substitute the `<script script type="module" crossorigin...` with a simple `<script>...</script>` at the end of the body and paste in the content of `/dist/assets/index.<...>.js`
 5. Copy the css code from `/dist/assets/index.<...>.css` and also insert it as simple `<style>...</style>` element. Remove the other cross-orifin import, too.
 
+> Current combined File Size: `51KB`
+
 ## About SolidJS
 
 Solid is kind of like React, but it has its quirks when introducing reactive state & signals. Be sure to read about the difference of `useState()` in React and `createSignal()` in Solid. Apart from that we tried to avoid Solid-specific code to make the code more readable for anyone with React knowledge.
