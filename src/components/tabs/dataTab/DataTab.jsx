@@ -1,4 +1,5 @@
 import DataTile from './DataTile';
+import StatTile from './StatTile';
 
 const DataTab = () => {
   return (
@@ -8,29 +9,41 @@ const DataTab = () => {
       </div>
       <div class='sm:grid flex flex-col sm:grid-cols-3 sm:gap-3'>
         {/* Substitute %TempValue% for value*/}
-        <DataTile label='Temperatur' unit='C°' value={20} max={40} min={-30} />
+        <DataTile
+          label='Temperatur'
+          unit='C°'
+          value='%TempValue%'
+          max={40}
+          min={-30}
+        />
         {/* Substitute %PressureValue% for value*/}
-        <DataTile label='Luftdruck' unit='hPa' value={60} max={100} min={0} />
+        <StatTile label='Luftdruck' unit='hPa' value='%PressureValue%' />
         {/* Substitute %HumidityValue% for value*/}
         <DataTile
           label='Luftfeuchtigkeit'
           unit='%'
-          value={83}
+          value='%HumidityValue%'
           max={100}
           min={0}
         />
         {/* Substitute %LuxValue% for value*/}
+        <StatTile label='Lichtintensität' unit='Lux' value='%LuxValue%' />
+        {/* Substitute %MoistureValue% for value*/}
         <DataTile
-          label='Lichtintensität'
-          unit='Lux'
-          value={90}
-          max={300}
+          label='Bodenfeuchte'
+          unit='%'
+          value='%MoistureValue%'
+          max={100}
           min={0}
         />
-        {/* Substitute %MoistureValue% for value*/}
-        <DataTile label='Bodenfeuchte' unit='%' value={12} max={100} min={0} />
         {/* Substitute %RssiValue% for value*/}
-        <DataTile label='WiFi Qualität' unit='%' value={77} max={100} min={0} />
+        <DataTile
+          label='WiFi Qualität'
+          unit='%'
+          value='%RssiValue%'
+          max={100}
+          min={0}
+        />
       </div>
       {/* <p>Anzahl der Systemstarts %BOOTNUMBER% </p> */}
     </div>
