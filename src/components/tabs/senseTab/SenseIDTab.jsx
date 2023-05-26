@@ -1,5 +1,5 @@
 import LabelledInput from '../../LabelledInput';
-import InputWithToggle from './InputWithToggle';
+import SensorInput from './SensorInput';
 
 const SenseIDTab = () => {
   return (
@@ -28,50 +28,44 @@ const SenseIDTab = () => {
           />
         </div>
         <div class='sm:grid flex flex-col sm:grid-cols-3 sm:gap-10'>
-          <InputWithToggle
+          <SensorInput
             label='Temperatursensor ID'
             inputId='tempsense'
-            checkBoxId='boolTemp'
             type='text'
             length={80}
             defaultValue='%TempSenseID%'
           />
-          <InputWithToggle
+          <SensorInput
             label='Luftdrucksensor ID'
             inputId='pressuresense'
-            checkBoxId='boolPressure'
             type='text'
             length={80}
             defaultValue='%PressureSenseID%'
           />
-          <InputWithToggle
+          <SensorInput
             label='Luftfeuchtigkeitssensor ID'
             inputId='humidsense'
-            checkBoxId='boolHumid'
             type='text'
             length={80}
             defaultValue='%HumidSenseID%'
           />
-          <InputWithToggle
+          <SensorInput
             label='Helligkeitssensor ID'
             inputId='luxsense'
-            checkBoxId='boolLux'
             type='text'
             length={80}
             defaultValue='%LuxSenseID%'
           />
-          <InputWithToggle
+          <SensorInput
             label='Bodenfeuchtesensor ID'
             inputId='soilsense'
-            checkBoxId='boolSoil'
             type='text'
             length={80}
             defaultValue='%SoilSenseID%'
           />
-          <InputWithToggle
+          <SensorInput
             label='DigitZ-WLAN ID'
             inputId='rssi'
-            checkBoxId='boolRssi'
             type='text'
             length={80}
             defaultValue='%RssiID%'

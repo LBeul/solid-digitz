@@ -1,11 +1,4 @@
-const InputWithToggle = ({
-  label,
-  inputId,
-  checkBoxId,
-  type,
-  length,
-  defaultValue,
-}) => {
+const SensorInput = ({ label, inputId, type, length, defaultValue }) => {
   return (
     <div class='m-3 sm:m-0'>
       <fieldset class='container flex flex-row justify-center'>
@@ -20,18 +13,9 @@ const InputWithToggle = ({
           length={length}
           defaultValue={defaultValue ?? `%${inputId}%`}
         />
-        {checkBoxId && (
-          <input
-            class='shadowaccent-emerald-600 w-10 opacity-50 leading-tight'
-            type='checkbox'
-            name={checkBoxId}
-            checked={true}
-            disabled
-          />
-        )}
       </fieldset>
     </div>
   );
 };
 
-export default InputWithToggle;
+export default SensorInput;

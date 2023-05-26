@@ -42,3 +42,9 @@ yarn build
 ## About SolidJS
 
 Solid is kind of like React, but it has its quirks when introducing reactive state & signals. Be sure to read about the difference of `useState()` in React and `createSignal()` in Solid. Apart from that we tried to avoid Solid-specific code to make the code more readable for anyone with React knowledge.
+
+## Use ToolTip component to give clues & information
+
+You can use the `ToolTip` component in `srx/components/ToolTip.jsx` to give further information to the users.
+For example using `<ToolTip content="Information comes here">` renders a button with a question mark which triggers a div popover that says _Information comes here_.
+This button can be used anywhere in the app -- you just have to import it.
