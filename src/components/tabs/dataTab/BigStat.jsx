@@ -5,8 +5,8 @@ const BigStat = ({ value, measurement }) => {
         &nbsp
       </div>
       <div class='flex flex-col flex-nowrap justify-center h-32 overflow-hidden text-center'>
-        <div class='text-emerald-500 overflow-hidden text-3xl font-semibold'>
-          9000
+        <div class='text-emerald-500 overflow-hidden text-2xl font-semibold'>
+          {value}
         </div>
       </div>
       <div class='text-xs text-emerald-700 font-bold text-center mt-1'>

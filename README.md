@@ -35,9 +35,11 @@ yarn build
 
 ## Combine Resources into Single File to be served by an ESP32
 
-1. run the above explained `build` command
-2. Substitute the `<script script type="module" crossorigin...` with a simple `<script>...</script>` and paste in your compiled js file's content
-3. Copy the css code and also insert it as simple `<style>...</style>` element. Remove the other cross-orifin import, too.
+1. Run the above explained `build` command
+2. Access the generated `/dist` directory
+3. Inspect `/dist/index.html`
+4. Substitute the `<script script type="module" crossorigin...` with a simple `<script>...</script>` at the end of the body and paste in the content of `/dist/assets/index.<...>.js`
+5. Copy the css code from `/dist/assets/index.<...>.css` and also insert it as simple `<style>...</style>` element. Remove the other cross-orifin import, too.
 
 ## About SolidJS
 
